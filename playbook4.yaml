@@ -1,0 +1,10 @@
+# This is the playbook to restart the sshd
+---
+- name: Restarting SSHD
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Restarting sshd
+      ansible.builtin.service:
+        name: sshd
+        state: restart
