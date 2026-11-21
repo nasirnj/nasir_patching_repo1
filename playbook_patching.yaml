@@ -6,4 +6,8 @@
     - name: Update all packages
       ansible.builtin.dnf:
         name: "*"
-        state: latest 
+        state: latest
+    - name: Restart the sshd
+      ansible.builtin.service:
+        name: sshd
+        state: restarted
