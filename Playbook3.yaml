@@ -1,0 +1,10 @@
+# Adding newer playbook for service
+---
+- name: Adding service tasks
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: restarting sshd
+      service:
+        name: sshd
+        state: restart
