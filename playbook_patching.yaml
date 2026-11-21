@@ -1,0 +1,9 @@
+---
+- name: Patching the server
+  hosts: all
+  gathe_facts: no
+  tasks: 
+    - name: Update all packages
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest 
